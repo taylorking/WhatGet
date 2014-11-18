@@ -3,8 +3,9 @@
 # Taylor King 2014
 # A script to go to what.cd and get all freeleach torrents 
 #
-rm -f .cookies.txt .urls .sitedata .cleardata
 
+rm -f .cookies.txt .urls .sitedata .cleardata
+mkdir torrents
 
 export username=`cat user_info.txt | grep username | cut -d':' -f 2 | sed s/\ //g`
 export password=`cat user_info.txt | grep password | cut -d':' -f 2`
