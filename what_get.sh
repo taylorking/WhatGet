@@ -17,7 +17,7 @@ curl --data "username=$username&password=$password&submit=login" -b ".cookies.tx
 rm -f .sitedata # delete the data from the previous go if it exists
 for i in `seq 1 5`;
 do
-  curl -b ".cookies.txt" -c ".cookies.txt" --url "https://what.cd/torrents.php?page=$i&freetorrent=1" -o .sitedata 
+  curl -b ".cookies.txt" -c ".cookies.txt" --url "https://what.cd/torrents.php?page=$i&freetorrent=1" >> .sitedata 
 done
 sed 's/\&amp;/\&/g' .sitedata > .cleardata # replace curls &amp; with a regular &
 cat .cleardata | grep DL | cut -d'"' -f 2 > .urls
